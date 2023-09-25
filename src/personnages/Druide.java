@@ -2,6 +2,8 @@ package personnages;
 
 import java.util.*;
 
+import sun.applet.Main;
+
 public class Druide {
 	private String nom;
 	private int effetPotionMin;
@@ -29,7 +31,7 @@ public class Druide {
 		Random r = new Random();
 		forcePotion = r.nextInt(effetPotionMax);
 		while(forcePotion < effetPotionMin) {
-			forcePotion = r.nextInt(effetPotionMax);
+			forcePotion += 1;
 		}
 		if(forcePotion > 7) {
 			this.parler("J'ai préparé une super potion de force » puis donnera la force de la potion" + forcePotion);
@@ -37,5 +39,9 @@ public class Druide {
 		else {
 			this.parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force" + forcePotion);
 		}
+	}
+	public static void main(String[] args) {
+		Druide pano = new Druide("Panoramix",5,10);
+		pano.preparerPotion();
 	}
 }

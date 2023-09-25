@@ -23,6 +23,13 @@ public class Gaulois {
 				+ romain.getNom());
 		romain.recevoirCoup(force / 3);
 		}
+	
+	public int boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
+		this.parler("Merci Druide, je sens que ma force est" + effetPotion + "fois décuplée.");
+		return effetPotion;
+	}
+	
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion="
